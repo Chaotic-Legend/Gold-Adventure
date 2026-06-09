@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://dxusqj4hglowm"]
+
+[ext_resource type="Script" uid="uid://0u1jqxgskhf" path="res://scripts/coin.gd" id="1_hprdx"]
+[ext_resource type="Texture2D" uid="uid://dj8262ftpcegk" path="res://assets/sprites/coin/coin.png" id="1_r052u"]
+[ext_resource type="AudioStream" uid="uid://cuaqti785bjvt" path="res://assets/audio/coin.wav" id="3_11l1o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tookb"]
+size = Vector2(14, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgi06"]
+atlas = ExtResource("1_r052u")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g537i"]
+atlas = ExtResource("1_r052u")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2p6v"]
+atlas = ExtResource("1_r052u")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffmqm"]
+atlas = ExtResource("1_r052u")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81h6x"]
+atlas = ExtResource("1_r052u")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qbp07"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgi06")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g537i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2p6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffmqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81h6x")
+}],
+"loop": true,
+"name": &"Spin",
+"speed": 10.0
+}]
+
+[node name="Coin" type="Node2D" unique_id=1953137067]
+script = ExtResource("1_hprdx")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1318697664]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1335789198]
+shape = SubResource("RectangleShape2D_tookb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=148695811]
+sprite_frames = SubResource("SpriteFrames_qbp07")
+animation = &"Spin"
+autoplay = "Spin"
+
+[node name="CoinSound" type="AudioStreamPlayer2D" parent="." unique_id=1864951524]
+stream = ExtResource("3_11l1o")
+volume_db = -4.0
+max_polyphony = 10
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="finished" from="CoinSound" to="." method="_on_coin_sound_finished"]

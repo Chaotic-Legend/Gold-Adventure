@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://tvtvu3amje08"]
+
+[ext_resource type="Script" uid="uid://cd3ot4jvyqfod" path="res://scripts/ui_examples/button_examples/press_example.gd" id="2_had76"]
+[ext_resource type="Script" uid="uid://b3x8exsp65bcd" path="res://scripts/ui_examples/button_examples/toggle_example.gd" id="3_8nsvl"]
+[ext_resource type="Script" uid="uid://dq52yeq50hm2t" path="res://scripts/ui_examples/button_examples/stopwatch_example.gd" id="4_7uvrq"]
+[ext_resource type="Script" uid="uid://bbhuiclufsft8" path="res://scripts/ui_examples/button_examples/menu_button_example.gd" id="5_wu387"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lu8ti"]
+font_size = 25
+
+[node name="button_examples" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.15
+anchor_right = 0.85
+anchor_bottom = 0.85
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="PressExample" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+script = ExtResource("2_had76")
+metadata/_edit_use_anchors_ = true
+
+[node name="PressMe" type="Button" parent="VBoxContainer/PressExample"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "Press Me"
+
+[node name="PressMeText" type="Label" parent="VBoxContainer/PressExample"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Button was not pressed!"
+label_settings = SubResource("LabelSettings_lu8ti")
+
+[node name="ToggleExample" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+script = ExtResource("3_8nsvl")
+metadata/_edit_use_anchors_ = true
+
+[node name="ToggleMe" type="Button" parent="VBoxContainer/ToggleExample"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+toggle_mode = true
+text = "Toggle Me"
+
+[node name="ToggleMeText" type="Label" parent="VBoxContainer/ToggleExample"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "OFF"
+label_settings = SubResource("LabelSettings_lu8ti")
+vertical_alignment = 1
+
+[node name="StopwatchExample" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+script = ExtResource("4_7uvrq")
+metadata/_edit_use_anchors_ = true
+
+[node name="StopwatchToggle" type="Button" parent="VBoxContainer/StopwatchExample"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+toggle_mode = true
+text = "START"
+
+[node name="TimerText" type="Label" parent="VBoxContainer/StopwatchExample"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0.0"
+label_settings = SubResource("LabelSettings_lu8ti")
+vertical_alignment = 1
+
+[node name="MenuButtonExample" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+script = ExtResource("5_wu387")
+metadata/_edit_use_anchors_ = true
+
+[node name="MenuButton" type="Button" parent="VBoxContainer/MenuButtonExample"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+toggle_mode = true
+text = "START GAME"
+
+[node name="MenuButtonText" type="Label" parent="VBoxContainer/MenuButtonExample"]
+layout_mode = 2
+text = "A button that changes the scene"
+label_settings = SubResource("LabelSettings_lu8ti")
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/PressExample/PressMe" to="VBoxContainer/PressExample" method="_on_press_me_pressed"]
+[connection signal="toggled" from="VBoxContainer/ToggleExample/ToggleMe" to="VBoxContainer/ToggleExample" method="_on_toggle_me_toggled"]
+[connection signal="toggled" from="VBoxContainer/StopwatchExample/StopwatchToggle" to="VBoxContainer/StopwatchExample" method="_on_stopwatch_toggle_toggled"]
+[connection signal="pressed" from="VBoxContainer/MenuButtonExample/MenuButton" to="VBoxContainer/MenuButtonExample" method="_on_menu_button_pressed"]

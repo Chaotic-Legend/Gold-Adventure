@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://b6k8ndcxow212"]
+
+[ext_resource type="Script" uid="uid://d34rj7yjmlfwj" path="res://scripts/ui_coin_counter.gd" id="1_ilsbt"]
+[ext_resource type="Texture2D" uid="uid://dj8262ftpcegk" path="res://assets/sprites/coin/coin.png" id="3_cnrwm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgi06"]
+atlas = ExtResource("3_cnrwm")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g537i"]
+atlas = ExtResource("3_cnrwm")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2p6v"]
+atlas = ExtResource("3_cnrwm")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffmqm"]
+atlas = ExtResource("3_cnrwm")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81h6x"]
+atlas = ExtResource("3_cnrwm")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u7pdq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgi06")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g537i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2p6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffmqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81h6x")
+}],
+"loop": true,
+"name": &"Spin",
+"speed": 10.0
+}]
+
+[node name="UICoinCounter" type="HBoxContainer" unique_id=2004586013]
+offset_right = 110.0
+offset_bottom = 64.0
+theme_override_constants/separation = 20
+alignment = 1
+script = ExtResource("1_ilsbt")
+
+[node name="Control" type="Control" parent="." unique_id=183212319]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control" unique_id=1717200682]
+position = Vector2(38, 36)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_u7pdq")
+animation = &"Spin"
+autoplay = "Spin"
+
+[node name="CountLabel" type="Label" parent="." unique_id=480239605]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8862745, 0.49019608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 50
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true

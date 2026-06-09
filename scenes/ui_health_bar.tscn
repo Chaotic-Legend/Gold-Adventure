@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b06xgjh4fpurk"]
+
+[ext_resource type="Script" uid="uid://7qmpxjuwxihg" path="res://scripts/hpbar.gd" id="1_eunas"]
+[ext_resource type="Script" uid="uid://ju77f83f6fsb" path="res://scripts/ui_health_bar.gd" id="1_i5gog"]
+
+[node name="HPBar" type="Panel" unique_id=88488620]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -406.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = 46.0
+grow_horizontal = 0
+script = ExtResource("1_eunas")
+
+[node name="UIHealthBar" type="ProgressBar" parent="." unique_id=353623447]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+step = 1.0
+show_percentage = false
+script = ExtResource("1_i5gog")
+full_hp_color = Color(0, 1, 0, 1)
+empty_hp_color = Color(1, 0, 0, 1)

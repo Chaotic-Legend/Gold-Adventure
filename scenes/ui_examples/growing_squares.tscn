@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dw6cmh2ndaa5g"]
+
+[node name="GrowingSquares" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.498039, 0.498039, 0.498039, 1)
+
+[node name="Vertical" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.24
+anchor_top = 0.423
+anchor_right = 0.24
+anchor_bottom = 0.577
+offset_left = -50.48
+offset_top = -0.104004
+offset_right = 49.52
+offset_bottom = 0.103973
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 1)
+
+[node name="Horizontal" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.457
+anchor_top = 0.5
+anchor_right = 0.543
+anchor_bottom = 0.5
+offset_left = -0.463989
+offset_top = -50.0
+offset_right = 0.463928
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 1, 1)
+
+[node name="Full" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.717
+anchor_top = 0.423
+anchor_right = 0.804
+anchor_bottom = 0.577
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 1, 0, 1)

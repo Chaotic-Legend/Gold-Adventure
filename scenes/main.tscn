@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://3je2ulibqjke"]
+
+[ext_resource type="PackedScene" uid="uid://dug87232vl1ke" path="res://scenes/ui_in_game.tscn" id="1_kry3j"]
+[ext_resource type="PackedScene" uid="uid://cetkrmnk0khbh" path="res://scenes/terrain.tscn" id="2_21xkr"]
+[ext_resource type="PackedScene" uid="uid://dlehtl00a2jww" path="res://scenes/player.tscn" id="3_6bp64"]
+[ext_resource type="PackedScene" uid="uid://x1snh0pb3m25" path="res://scenes/chest.tscn" id="4_21xkr"]
+[ext_resource type="PackedScene" uid="uid://dxusqj4hglowm" path="res://scenes/coin.tscn" id="4_344ge"]
+[ext_resource type="PackedScene" uid="uid://cj71h5xjoopng" path="res://scenes/killzone.tscn" id="4_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://d0kgu6j3n6c2x" path="res://scenes/spike.tscn" id="5_ynf5e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6xl0"]
+size = Vector2(10000000000, 50)
+
+[node name="Main" type="Node2D" unique_id=1781627828]
+
+[node name="UIInGame" parent="." unique_id=1489070011 instance=ExtResource("1_kry3j")]
+
+[node name="Terrain" parent="." unique_id=93215006 instance=ExtResource("2_21xkr")]
+z_index = 1
+
+[node name="Player" parent="." unique_id=466792176 node_paths=PackedStringArray("ui_dash_cooldown") instance=ExtResource("3_6bp64")]
+z_index = 5
+position = Vector2(650, 380)
+ui_dash_cooldown = NodePath("../UIInGame/UIAbilityCooldown")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1165821615]
+zoom = Vector2(2.5, 2.5)
+process_callback = 0
+limit_bottom = 1000
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="Killzone" parent="." unique_id=1685630172 instance=ExtResource("4_o6xl0")]
+position = Vector2(650, 1000)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=522188129]
+shape = SubResource("RectangleShape2D_o6xl0")
+
+[node name="Chests" type="Node" parent="." unique_id=1554848177]
+
+[node name="Chest" parent="Chests" unique_id=1493693830 instance=ExtResource("4_21xkr")]
+z_index = 3
+position = Vector2(430, 135)
+
+[node name="Chest2" parent="Chests" unique_id=411917688 instance=ExtResource("4_21xkr")]
+z_index = 3
+position = Vector2(-240, 679)
+
+[node name="Coins" type="Node" parent="." unique_id=940493939]
+
+[node name="Coin" parent="Coins" unique_id=1953137067 instance=ExtResource("4_344ge")]
+z_index = 2
+position = Vector2(1160, 520)
+
+[node name="Coin2" parent="Coins" unique_id=557047442 instance=ExtResource("4_344ge")]
+z_index = 2
+position = Vector2(911, 130)
+
+[node name="Coin3" parent="Coins" unique_id=1250981073 instance=ExtResource("4_344ge")]
+z_index = 2
+position = Vector2(1456, 213)
+
+[node name="Coin4" parent="Coins" unique_id=1513188736 instance=ExtResource("4_344ge")]
+z_index = 2
+position = Vector2(-177, 610)
+
+[node name="Coin5" parent="Coins" unique_id=1822374505 instance=ExtResource("4_344ge")]
+z_index = 2
+position = Vector2(590, 420)
+
+[node name="Spikes" type="Node" parent="." unique_id=1587613861]
+
+[node name="Spike" parent="Spikes" unique_id=1155301423 instance=ExtResource("5_ynf5e")]
+z_index = 2
+position = Vector2(845, 600)
+
+[node name="Spike2" parent="Spikes" unique_id=1067610677 instance=ExtResource("5_ynf5e")]
+z_index = 2
+position = Vector2(1485, 536)
+
+[node name="Spike3" parent="Spikes" unique_id=1249023042 instance=ExtResource("5_ynf5e")]
+z_index = 2
+position = Vector2(1665, 312)
+
+[node name="Spike4" parent="Spikes" unique_id=1461504560 instance=ExtResource("5_ynf5e")]
+z_index = 2
+position = Vector2(-110, 696)
+
+[node name="Spike5" parent="Spikes" unique_id=1783246316 instance=ExtResource("5_ynf5e")]
+z_index = 2
+position = Vector2(980, 216)
+
+[connection signal="body_entered" from="Killzone" to="Killzone" method="_on_body_entered"]
+
+[editable path="UIInGame"]

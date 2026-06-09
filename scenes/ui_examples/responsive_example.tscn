@@ -1,0 +1,172 @@
+[gd_scene format=3 uid="uid://dyu34b6i2slps"]
+
+[ext_resource type="Script" uid="uid://cohaa0yhk18h1" path="res://scripts/ui_examples/responsive_example.gd" id="1_qq60c"]
+[ext_resource type="Texture2D" uid="uid://b24l3gql6ilsp" path="res://assets/KinderdijkWindmills.jpg" id="2_61chl"]
+[ext_resource type="Texture2D" uid="uid://rfu346hhj8wq" path="res://assets/cat_with_cheese.png" id="3_0tcin"]
+[ext_resource type="Texture2D" uid="uid://dgc5x2s8td7j4" path="res://assets/cheese_wheel.png" id="4_vt3r7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7gewb"]
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_6tpif"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[node name="ResponsiveExample" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qq60c")
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.199219, 0.199219, 0.199219, 1)
+
+[node name="BG2" type="ColorRect" parent="BG"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_right = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="BG/BG2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BG/BG2/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="Header" type="ColorRect" parent="BG/BG2/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_vertical = 0
+color = Color(0.300781, 0.300781, 0.300781, 1)
+
+[node name="Label" type="Label" parent="BG/BG2/ScrollContainer/VBoxContainer/Header"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Why cheese is awesome"
+label_settings = SubResource("LabelSettings_7gewb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="BG/BG2/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="Label" type="Label" parent="BG/BG2/ScrollContainer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+text = "Cheese plays a vital role in Dutch culture, featuring prominently in the country’s cuisine and traditions. Cheese markets, such as those in Alkmaar and Gouda, attract tourists and showcase the importance of cheese in Dutch heritage."
+label_settings = SubResource("LabelSettings_6tpif")
+autowrap_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="BG/BG2/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="TextureRect" type="TextureRect" parent="BG/BG2/ScrollContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("2_61chl")
+expand_mode = 4
+
+[node name="MarginContainer3" type="MarginContainer" parent="BG/BG2/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="Label" type="Label" parent="BG/BG2/ScrollContainer/VBoxContainer/MarginContainer3"]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+text = "Did you know that a slice of cheese is often thrown on a cat's face? Make sure they don't eat it though as most cats are lactose intolerant."
+label_settings = SubResource("LabelSettings_6tpif")
+autowrap_mode = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="BG/BG2/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="TextureRect" type="TextureRect" parent="BG/BG2/ScrollContainer/VBoxContainer/MarginContainer4"]
+layout_mode = 2
+texture = ExtResource("3_0tcin")
+expand_mode = 4
+
+[node name="MarginContainer5" type="MarginContainer" parent="BG/BG2/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="Label" type="Label" parent="BG/BG2/ScrollContainer/VBoxContainer/MarginContainer5"]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+text = "Why did the cheese get mad and roll away?
+
+...
+
+Because it was tired of being cut into!
+
+haha get it... because it's tired... and rolling away as in it's a tire..."
+label_settings = SubResource("LabelSettings_6tpif")
+autowrap_mode = 2
+
+[node name="MarginContainer6" type="MarginContainer" parent="BG/BG2/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="TextureRect" type="TextureRect" parent="BG/BG2/ScrollContainer/VBoxContainer/MarginContainer6"]
+layout_mode = 2
+texture = ExtResource("4_vt3r7")
+expand_mode = 4
+
+[node name="Footer" type="ColorRect" parent="BG/BG2/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_vertical = 8
+color = Color(0.300781, 0.300781, 0.300781, 1)
+
+[node name="Label" type="Label" parent="BG/BG2/ScrollContainer/VBoxContainer/Footer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Footer"
+label_settings = SubResource("LabelSettings_7gewb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resolution" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "0000x0000"

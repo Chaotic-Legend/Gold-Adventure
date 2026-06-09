@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://blxg86lkiewq5"]
+
+[ext_resource type="Texture2D" uid="uid://68cyffpb6hhr" path="res://assets/sprites/dash.png" id="1_buy30"]
+[ext_resource type="Script" uid="uid://ywgqmpp1npnd" path="res://scripts/ui_ability_cooldown.gd" id="2_pw1bg"]
+
+[node name="UIAbilityCooldown" type="TextureRect" unique_id=1444552155]
+custom_minimum_size = Vector2(80, 80)
+offset_right = 80.0
+offset_bottom = 80.0
+texture = ExtResource("1_buy30")
+expand_mode = 1
+script = ExtResource("2_pw1bg")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1021817325]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+step = 0.0
+fill_mode = 3
+show_percentage = false

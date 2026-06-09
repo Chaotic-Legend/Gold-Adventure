@@ -1,0 +1,320 @@
+[gd_scene format=3 uid="uid://dupq58quciwj8"]
+
+[ext_resource type="Script" uid="uid://bybbi1d7hh6al" path="res://scripts/ui_examples/progress_bar_examples/progress_bar_timer_example.gd" id="2_0mpbq"]
+[ext_resource type="Script" uid="uid://ch00qt13gs16e" path="res://scripts/ui_examples/progress_bar_examples/progress_bar_example.gd" id="2_1ob3t"]
+[ext_resource type="Script" uid="uid://16g1q2kt4dxc" path="res://scripts/ui_examples/progress_bar_examples/hover_progress_bar.gd" id="3_4ok83"]
+[ext_resource type="Script" uid="uid://b5blx8fts3tty" path="res://scripts/ui_examples/progress_bar_examples/ability_cooldown.gd" id="4_0xl7b"]
+[ext_resource type="Texture2D" uid="uid://dshd4rqioxbyl" path="res://assets/sprites/double_jump.png" id="5_h3w38"]
+[ext_resource type="Texture2D" uid="uid://68cyffpb6hhr" path="res://assets/sprites/dash.png" id="6_k8yg4"]
+[ext_resource type="Texture2D" uid="uid://cus2q8q6yv2cq" path="res://assets/sprites/spike.png" id="7_2eu5i"]
+[ext_resource type="Script" uid="uid://b5k5wp4vkrtpn" path="res://scripts/ui_examples/progress_bar_examples/health_bar_example.gd" id="8_hjxx3"]
+[ext_resource type="Script" uid="uid://d3ii2kistkbj" path="res://scripts/ui_examples/progress_bar_examples/level_progression.gd" id="9_87pak"]
+
+[node name="ProgressBarExamples" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LevelProgression" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 14.0
+grow_horizontal = 2
+alignment = 1
+script = ExtResource("9_87pak")
+
+[node name="MarginContainer" type="MarginContainer" parent="LevelProgression"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ProgressionProgressBar" type="ProgressBar" parent="LevelProgression/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+show_percentage = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="ProgressBarExample" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+script = ExtResource("2_1ob3t")
+
+[node name="LeftButton" type="Button" parent="VBoxContainer/ProgressBarExample"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "👈"
+
+[node name="BasicProgressBar" type="ProgressBar" parent="VBoxContainer/ProgressBarExample"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 10.0
+step = 1.0
+value = 5.0
+
+[node name="RightButton" type="Button" parent="VBoxContainer/ProgressBarExample"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "👉"
+
+[node name="ProgressBarTimerExample" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+script = ExtResource("2_0mpbq")
+
+[node name="StartTimerButton" type="Button" parent="VBoxContainer/ProgressBarTimerExample"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "▶"
+
+[node name="TimerProgressBar" type="ProgressBar" parent="VBoxContainer/ProgressBarTimerExample"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 3.0
+show_percentage = false
+
+[node name="TimerLabel" type="Label" parent="VBoxContainer/ProgressBarTimerExample/TimerProgressBar"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressHoverExample" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HoverProgressBar" type="ProgressBar" parent="VBoxContainer/ProgressHoverExample"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 0.2
+step = 0.001
+show_percentage = false
+script = ExtResource("3_4ok83")
+
+[node name="HoverProgressBar2" type="ProgressBar" parent="VBoxContainer/ProgressHoverExample"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 0.2
+step = 0.001
+fill_mode = 1
+show_percentage = false
+script = ExtResource("3_4ok83")
+
+[node name="HoverProgressBar3" type="ProgressBar" parent="VBoxContainer/ProgressHoverExample"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 0.2
+step = 0.001
+fill_mode = 2
+show_percentage = false
+script = ExtResource("3_4ok83")
+
+[node name="HoverProgressBar4" type="ProgressBar" parent="VBoxContainer/ProgressHoverExample"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 0.2
+step = 0.001
+fill_mode = 3
+show_percentage = false
+script = ExtResource("3_4ok83")
+
+[node name="AbilityCooldownExample" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="AbilityCooldownProgressBar" type="ProgressBar" parent="VBoxContainer/AbilityCooldownExample"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 0.305
+fill_mode = 3
+show_percentage = false
+script = ExtResource("4_0xl7b")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/AbilityCooldownExample/AbilityCooldownProgressBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/AbilityCooldownExample/AbilityCooldownProgressBar/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("5_h3w38")
+expand_mode = 1
+
+[node name="AbilityButton" type="Button" parent="VBoxContainer/AbilityCooldownExample/AbilityCooldownProgressBar"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AbilityCooldownProgressBar2" type="ProgressBar" parent="VBoxContainer/AbilityCooldownExample"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 0.305
+fill_mode = 3
+show_percentage = false
+script = ExtResource("4_0xl7b")
+ability_cooldown = 2.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/AbilityCooldownExample/AbilityCooldownProgressBar2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/AbilityCooldownExample/AbilityCooldownProgressBar2/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("6_k8yg4")
+expand_mode = 1
+
+[node name="AbilityButton" type="Button" parent="VBoxContainer/AbilityCooldownExample/AbilityCooldownProgressBar2"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AbilityCooldownProgressBar3" type="ProgressBar" parent="VBoxContainer/AbilityCooldownExample"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 0.305
+fill_mode = 3
+show_percentage = false
+script = ExtResource("4_0xl7b")
+ability_cooldown = 3.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/AbilityCooldownExample/AbilityCooldownProgressBar3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/AbilityCooldownExample/AbilityCooldownProgressBar3/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("7_2eu5i")
+expand_mode = 1
+
+[node name="AbilityButton" type="Button" parent="VBoxContainer/AbilityCooldownExample/AbilityCooldownProgressBar3"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HealthBarExample" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+script = ExtResource("8_hjxx3")
+
+[node name="HealthProgressBar" type="ProgressBar" parent="VBoxContainer/HealthBarExample"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+show_percentage = false
+
+[node name="HealButton" type="Button" parent="VBoxContainer/HealthBarExample"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "❤"
+
+[node name="DamageButton" type="Button" parent="VBoxContainer/HealthBarExample"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "⚔"
+
+[node name="PoisonButton" type="Button" parent="VBoxContainer/HealthBarExample"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "🐍"
+
+[connection signal="pressed" from="VBoxContainer/ProgressBarExample/LeftButton" to="VBoxContainer/ProgressBarExample" method="_on_left_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ProgressBarExample/RightButton" to="VBoxContainer/ProgressBarExample" method="_on_right_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ProgressBarTimerExample/StartTimerButton" to="VBoxContainer/ProgressBarTimerExample" method="_on_start_timer_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/ProgressHoverExample/HoverProgressBar" to="VBoxContainer/ProgressHoverExample" method="_on_hover_progress_bar_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/ProgressHoverExample/HoverProgressBar" to="VBoxContainer/ProgressHoverExample" method="_on_hover_progress_bar_mouse_exited"]
+[connection signal="mouse_entered" from="VBoxContainer/ProgressHoverExample/HoverProgressBar2" to="VBoxContainer/ProgressHoverExample" method="_on_hover_progress_bar_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/ProgressHoverExample/HoverProgressBar2" to="VBoxContainer/ProgressHoverExample" method="_on_hover_progress_bar_mouse_exited"]
+[connection signal="mouse_entered" from="VBoxContainer/ProgressHoverExample/HoverProgressBar3" to="VBoxContainer/ProgressHoverExample" method="_on_hover_progress_bar_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/ProgressHoverExample/HoverProgressBar3" to="VBoxContainer/ProgressHoverExample" method="_on_hover_progress_bar_mouse_exited"]
+[connection signal="mouse_entered" from="VBoxContainer/ProgressHoverExample/HoverProgressBar4" to="VBoxContainer/ProgressHoverExample" method="_on_hover_progress_bar_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/ProgressHoverExample/HoverProgressBar4" to="VBoxContainer/ProgressHoverExample" method="_on_hover_progress_bar_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/AbilityCooldownExample/AbilityCooldownProgressBar/AbilityButton" to="VBoxContainer/AbilityCooldownExample/AbilityCooldownProgressBar" method="_on_ability_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/AbilityCooldownExample/AbilityCooldownProgressBar2/AbilityButton" to="VBoxContainer/AbilityCooldownExample/AbilityCooldownProgressBar2" method="_on_ability_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/AbilityCooldownExample/AbilityCooldownProgressBar3/AbilityButton" to="VBoxContainer/AbilityCooldownExample/AbilityCooldownProgressBar3" method="_on_ability_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HealthBarExample/HealButton" to="VBoxContainer/HealthBarExample" method="_on_heal_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HealthBarExample/DamageButton" to="VBoxContainer/HealthBarExample" method="_on_damage_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HealthBarExample/PoisonButton" to="VBoxContainer/HealthBarExample" method="_on_poison_button_pressed"]

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b82thuewg3e68"]
+
+[ext_resource type="PackedScene" uid="uid://c7s6p77uccpe5" path="res://scenes/ui_examples/text_changing_examples.tscn" id="1_j84a8"]
+[ext_resource type="PackedScene" uid="uid://tvtvu3amje08" path="res://scenes/ui_examples/button_examples.tscn" id="2_ylu6a"]
+[ext_resource type="PackedScene" uid="uid://dupq58quciwj8" path="res://scenes/ui_examples/progress_bar_examples.tscn" id="3_ilwiw"]
+
+[node name="ExampleSheet" type="TabContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+
+[node name="TextChangingExamples" parent="." instance=ExtResource("1_j84a8")]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="button_examples" parent="." instance=ExtResource("2_ylu6a")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="ProgressBarExamples" parent="." instance=ExtResource("3_ilwiw")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2

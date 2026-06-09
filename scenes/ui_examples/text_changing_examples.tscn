@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://c7s6p77uccpe5"]
+
+[ext_resource type="Script" uid="uid://c2u46erffh3v7" path="res://scripts/ui_examples/text_changing_examples.gd" id="1_6vv4e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q8evb"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_5v1b0"]
+font_size = 50
+
+[node name="TextChangingExamples" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6vv4e")
+
+[node name="MouseXText" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 83.0
+grow_vertical = 2
+text = "Mouse x"
+vertical_alignment = 2
+
+[node name="ColorRect" type="ColorRect" parent="MouseXText"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 2.0
+grow_vertical = 2
+
+[node name="MouseYText" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Mouse y"
+
+[node name="ColorRect" type="ColorRect" parent="MouseYText"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -292.5
+offset_top = -84.0
+offset_right = 292.5
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="SomeText" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+text = "Some text on the screen"
+label_settings = SubResource("LabelSettings_q8evb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CounterText" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+text = "0"
+label_settings = SubResource("LabelSettings_5v1b0")
+horizontal_alignment = 1
+vertical_alignment = 1
