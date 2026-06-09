@@ -8,7 +8,7 @@ This video tutorial is a friendly, follow-along project that walks viewers throu
 # Assets #
 [Girl Knight Character Asset](https://jumpbutton.itch.io/girlknightasset) by [JumpButton](https://jumpbutton.itch.io/) ([Ko-fi](https://ko-fi.com/jump_button))
 
-![Sprite Asset](Sprites/Knight_player/Idle_KG_1.png)
+![Sprite Asset](assets/sprites/Knight_player/Idle_KG_1.png)
 
 # Create a Godot task #
 <ins> **Step 1: Context setting** </ins>
@@ -254,7 +254,7 @@ This video tutorial is a friendly, follow-along project that walks viewers throu
 # Assets #
 [Golden Knight Character Asset](https://apyryon.itch.io/free-sample-fantasy-saga-7-golden-knight-2d-character-portrait) by [ApyrYon](https://apyryon.itch.io/) ([Instagram](https://www.instagram.com/apyr.dev/?next=%2F)) and [Pixel Art Platformer - Village Props](https://cainos.itch.io/pixel-art-platformer-village-props) by [Cainos](https://cainos.itch.io/) ([Twitter](https://twitter.com/cainos_chen))
 
-![Sprite Asset](Sprites/Golden_Knight/Golden_Knight_Sprite_Sheet.png)
+![Sprite Asset](assets/sprites/Golden_Knight/Golden_Knight.png)
 
 # Create a Godot task #
 <ins> What application is this task for? </ins>
